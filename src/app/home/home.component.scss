@@ -1,0 +1,13 @@
+table {
+  empty-cells: show;
+  border-collapse: collapse;
+  margin: auto;
+
+  th,
+  td {
+    border: solid 0.1rem black;
+    width: 9rem;
+    height: 3rem;
+    text-align: center;
+  }
+}
