@@ -1,0 +1,14 @@
+$default-color: rgb(4, 27, 126);
+$default-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+
+h1 {
+  font-family: $default-font;
+  color: $default-color;
+  &:hover {
+    text-decoration-line: underline;
+    text-underline-offset: 0.5rem;
+    text-decoration-style: wavy;
+    text-decoration-color: $default-color;
+  }
+}
