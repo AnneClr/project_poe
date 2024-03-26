@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InternService } from './services/intern.service';
 import { Intern } from './types/intern.type';
 
 @Component({
@@ -7,28 +8,21 @@ import { Intern } from './types/intern.type';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  // interns => variable de classe car dépendante de la classe ou attribut
-  //<Intern> : import du type déclaré dans le fichier intern.type
-  interns: Array<Intern> = [
-    {
-      lastname: 'de BOÜARD',
-      firstname: 'Anne-Claire',
-    },
-    {
-      lastname: 'YOFFIDAL',
-      firstname: 'Yann',
-    },
-    {
-      lastname: 'THURTIS',
-      firstname: 'Thomas',
-    },
-    {
-      lastname: 'BONNET',
-      firstname: 'Fabien',
-    },
-    {
-      lastname: 'BERTON',
-      firstname: 'Dorine',
-    },
-  ];
+  /**
+   * @var Array<Intern>
+   * Array of Intern to be displayed
+   */
+
+  //on redéclare interns car _interns est private
+  interns: Array<Intern> = []
+
+  // Initialisation de l'objet avec le constructor
+  //construction de l'objet par instance de InternService
+  constructor(private _service: InternService) { }
+
+  // ngOnInit que dans composant
+  // injection des données dans l'objet
+  ngOnInit(): void {
+    this.interns = this._service.interns
+  }
 }

@@ -1,13 +1,25 @@
+$default-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+h2 {
+  font-family: $default-font;
+}
 table {
+  font-family: $default-font;
   empty-cells: show;
   border-collapse: collapse;
   margin: auto;
-
+  width: 80%;
   th,
   td {
-    border: solid 0.1rem black;
+    border: solid 0.1rem #3b3936;
     width: 9rem;
     height: 3rem;
     text-align: center;
+  }
+  th {
+    background-color: #889c9b;
+  }
+  tr:nth-child(odd) {
+    background-color: #b2bebf;
   }
 }
