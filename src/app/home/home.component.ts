@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { InternService } from './services/intern.service';
 import { Intern } from './types/intern.type';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -25,8 +26,11 @@ export class HomeComponent {
   // la méthode subscribe permet d'avoir un souscripteur et s'exécute autant de fois que interns change
   ngOnInit(): void {
     // this.interns = this._service.interns => on affichait la liste des interns directement comme ça avant de mettre en place findAll
+    // methode .pipe() permet la transformation de l'information
+    // opérateur take de rxjs. take(1) pour le premier élément qui arrive (le tableau). Avec take permet d'arrêter d'émettre
     this._service
       .findAll()
+      .pipe(take(1))
       .subscribe((interns: Intern[]) => (this.interns = interns));
   }
 }

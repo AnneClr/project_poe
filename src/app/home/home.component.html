@@ -11,7 +11,7 @@
         <tr *ngFor="let intern of interns">
             <td>&nbsp;</td>
             <td>{{ intern.firstname }}</td>
-            <td>{{ intern.lastname }}</td>
+            <td>{{ intern.lastname | uppercase}}</td>
             <td>&nbsp;</td>
         </tr>
     </tbody>
