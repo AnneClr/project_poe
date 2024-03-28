@@ -9,7 +9,7 @@ import { IService } from '../../core/interfaces/i-service';
 export class InternService implements IService<Intern> {
   // interns => variable de classe car dépendante de la classe ou attribut
   //<Intern> : import du type déclaré dans le fichier intern.type
-  // private = pas accessible à lextérieur de la classe, on ENCAPSULE l'attribut
+  // private = pas accessible à l'extérieur de la classe, on ENCAPSULE l'attribut
   private _interns: Array<Intern> = [
     {
       lastname: 'ARNAUD',

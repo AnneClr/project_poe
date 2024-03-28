@@ -1,10 +1,12 @@
 <!-- [formGroup]="internForm" veut dire que le formulaire est associé à l'objet créé dans intern-form.components.ts -->
-<form [formGroup]="internForm" (ngSubmit)="onSubmit">
+<form [formGroup]="internForm" (ngSubmit)="onSubmit()">
     <legend>Ajouter un stagiaire</legend>
     <fieldset>
+
         <!-- la directive formControlName associe le contrôle paramétré avec le champ correspondant -->
         <div class="form-field">
             <input type="text" formControlName="lastname" placeholder="Votre nom">
+
             <!-- dans le formulaire, on accède à tous les contrôles de formulaire et touched pour affichage du message tant que condition pas remplie  -->
             <div class="error-messages"
                 *ngIf="internForm.controls['lastname'].errors && internForm.controls['lastname'].touched">
@@ -21,6 +23,7 @@
             </div>
         </div>
     </fieldset>
+    
     <!-- [disabled]="internForm.invalid" permet d'activer le bouton lorsque le formulaire est rempli -->
     <div class="form-field">
         <button [disabled]="internForm.invalid" type="submit">Ajouter</button>
