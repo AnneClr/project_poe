@@ -7,7 +7,7 @@ table {
   font-family: $default-font;
   empty-cells: show;
   border-collapse: collapse;
-  margin: auto;
+  margin: auto auto 1rem auto;
   width: 80%;
   th,
   td {
@@ -20,6 +20,17 @@ table {
     background-color: #889c9b;
   }
   tr:nth-child(odd) {
-    background-color: #b2bebf;
+    background-color: #d0dfe0;
+  }
+}
+
+a{
+  display: block;
+  text-align: center;
+  margin: 2rem auto 4rem auto;
+  text-decoration: none;
+  font-weight: 800;
+  &:visited{
+    color: #1e1e1e;
   }
 }
