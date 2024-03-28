@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Intern } from '../types/intern.type';
 import { IService } from '../../core/interfaces/i-service';
+import { HttpClient } from '@angular/common/http';
 
 // @Injectable indique que c'est un singleton
 @Injectable({
@@ -14,10 +15,6 @@ export class InternService implements IService<Intern> {
     {
       lastname: 'ARNAUD',
       firstname: 'Manon',
-    },
-    {
-      lastname: 'AUBERT',
-      firstname: 'Jean-luc',
     },
     {
       lastname: 'BERNARDIN',
@@ -76,10 +73,19 @@ export class InternService implements IService<Intern> {
       firstname: 'Thomas',
     },
   ];
-  constructor() {}
+
+  //injection de httpClient dans InternService
+  constructor(
+    private _httpClient: HttpClient
+  ) {}
 
   add(item: Intern): void {
     this._interns.push(item);
+  }
+
+  // on implémente la méthode findAll
+  findAll(): Intern[] {
+    return [];
   }
 
   // le getter permet d'avoir accès au tableau interns qui est privé
