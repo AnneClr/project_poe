@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Intern } from '../types/intern.type';
 import { IService } from '../../core/interfaces/i-service';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 // @Injectable indique que c'est un singleton
 @Injectable({
@@ -74,18 +75,20 @@ export class InternService implements IService<Intern> {
     },
   ];
 
-  //injection de httpClient dans InternService
-  constructor(
-    private _httpClient: HttpClient
-  ) {}
+  //injection du service httpClient dans InternService
+  constructor(private _httpClient: HttpClient) {}
 
-  add(item: Intern): void {
-    this._interns.push(item);
+  add(item: Intern): Observable<Intern> {
+    // avant on avait add(item: Intern) void{
+    //  this._interns.push(item); permet d'ajouter des interns temporairement quand on n'avait pas encore de fichier db.json
+    // }
+    // POST retourne un observable de la réponse
+    return this._httpClient.post<Intern>('http://localhost:3000/interns', item);
   }
 
-  // on implémente la méthode findAll
-  findAll(): Intern[] {
-    return [];
+  // on implémente la méthode findAll : retourne un objet qui observe une liste d'intern et qui notifie quand cette liste sera modifiée
+  findAll(): Observable<Intern[]> {
+    return this._httpClient.get<Intern[]>('http://localhost:3000/interns');
   }
 
   // le getter permet d'avoir accès au tableau interns qui est privé

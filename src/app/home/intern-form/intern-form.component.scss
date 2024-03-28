@@ -1,24 +1,29 @@
-form{
+$default-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+
+form {
+  font-family: $default-font;
   margin: auto;
   width: 50vw;
-  fieldset{
+  background: #003840;
+  border-radius: 0.2rem;
+  padding: 2rem;
+  legend {
+    color: #f1f1f1;
+  }
+  fieldset {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    width: fit-content;
     justify-content: space-between;
     gap: 1rem;
-    width: 100%;
-    input{
+    input {
       width: 60%;
     }
   }
-}
-
-
-
-.error-messages{
-  color: #f44036;
-  font-weight: 800;
-  margin-top: 0.2rem;
+  .error-messages {
+    color: #f44036;
+    font-weight: 800;
+    margin-top: 0.2rem;
+  }
 }

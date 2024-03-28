@@ -1,7 +1,10 @@
+// controller
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InternService } from '../services/intern.service';
 import { Router } from '@angular/router';
+import { Intern } from '../types/intern.type';
 
 @Component({
   selector: 'app-intern-form',
@@ -19,8 +22,10 @@ export class InternFormComponent {
     private _router: Router
   ) {}
 
-  // méthode appliquée à tous les composants exécutée immédiatement après le constructor de la classe
+  // ngOnInit permet d'appliquer une méthode à tous les composants qui est exécutée immédiatement après le constructor de la classe
   ngOnInit(): void {
+    // normalement comme c'est un controller, ce qu'on crée ici devrait être dans un service car on construit un formulaire
+    // On aura de la duplication de code lorsqu'on fera le form pour modifier les données d'où l'intérêt de mettre ça dans un service
     // group() pour grouper, on fait passer en arguments un objet
     // dans cet objet : on fait passer les contrôles qu'on nomme souvent par le nom de l'input
     this.internForm = this._formBuilder.group({
@@ -31,9 +36,11 @@ export class InternFormComponent {
       firstname: ['', [Validators.required]],
     });
   }
-  // méthode pour la soumission du form, on ajoute la saie dans intern.service et on redirige vers la page home
+  // méthode pour la soumission du form, on ajoute la saisie dans intern.service et on redirige vers la page home
+  //en ajoutant la méthode .subscribe permet d'avoir la persistance des données en local
   onSubmit(): void {
-    this._internService.add(this.internForm.value);
-    this._router.navigate(['/home']);
+    this._internService
+      .add(this.internForm.value)
+      .subscribe((intern: Intern) => this._router.navigate(['/home']));
   }
 }

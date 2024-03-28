@@ -1,3 +1,5 @@
+import { Observable } from "rxjs";
+
 /**
  * @interface IService
  * Define method to be implented in services CRUD class
@@ -15,5 +17,5 @@ export interface IService<T> {
   /**
    * Returns the whole list of T type
    */
-  findAll(): Array<T>;
+  findAll(): Observable<Array<T>>;
 }
