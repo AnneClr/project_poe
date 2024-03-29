@@ -4,10 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
+import { PoeModule } from './poe/poe.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HomeModule, AppRoutingModule],
+  imports: [BrowserModule, HomeModule, AppRoutingModule, PoeModule],
   providers: [],
   bootstrap: [AppComponent],
 })
