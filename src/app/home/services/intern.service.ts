@@ -13,62 +13,77 @@ export class InternService implements IService<Intern> {
     {
       lastname: 'ARNAUD',
       firstname: 'Manon',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'BERNARDIN',
       firstname: 'Bruno',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'BERTON',
       firstname: 'Dorine',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'BETTAN',
       firstname: 'Frédéric',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'BONNET',
       firstname: 'Fabien',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'CHENU',
       firstname: 'Guillaume',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'DE BOUARD',
       firstname: 'Anne-claire',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'DUMONET',
       firstname: 'Vincent',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'EL HACHIMI ALAOUI',
       firstname: 'Imane',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'GORMAND',
       firstname: 'Loïc',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'PROVO',
       firstname: 'Sabine',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'ROCK',
       firstname: 'Bertrand',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'ROFFIDAL',
       firstname: 'Yann',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'TROUCHE',
       firstname: 'Boris',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
     {
       lastname: 'TURTI',
       firstname: 'Thomas',
+      poe: { label: 'Développeur en cybersécurité', duration: 457 },
     },
   ];
 
@@ -76,6 +91,7 @@ export class InternService implements IService<Intern> {
 
   add(item: Intern): Observable<Intern> {
     return this._httpClient.post<Intern>('http://localhost:3000/interns', item);
+    console.log(item);
   }
 
   findAll(): Observable<Intern[]> {
@@ -83,6 +99,7 @@ export class InternService implements IService<Intern> {
       map((interns: Intern[]) => {
         return interns.sort((i1: Intern, i2: Intern) => {
           return i1.lastname.localeCompare(i2.lastname);
+          console.log(interns);
         });
       })
     );
