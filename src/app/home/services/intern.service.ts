@@ -9,9 +9,6 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root',
 })
 export class InternService implements IService<Intern> {
-  // interns => variable de classe car dépendante de la classe ou attribut
-  //<Intern> : import du type déclaré dans le fichier intern.type
-  // private = pas accessible à l'extérieur de la classe, on ENCAPSULE l'attribut
   private _interns: Array<Intern> = [
     {
       lastname: 'ARNAUD',
@@ -75,23 +72,15 @@ export class InternService implements IService<Intern> {
     },
   ];
 
-  //injection du service httpClient dans InternService
   constructor(private _httpClient: HttpClient) {}
 
   add(item: Intern): Observable<Intern> {
-    // avant on avait add(item: Intern) void{
-    //  this._interns.push(item); permet d'ajouter des interns temporairement quand on n'avait pas encore de fichier db.json
-    // }
-    // POST retourne un observable de la réponse
     return this._httpClient.post<Intern>('http://localhost:3000/interns', item);
   }
 
-  // on implémente la méthode findAll : retourne un objet qui observe une liste d'intern et qui notifie quand cette liste sera modifiée
-  // L'opérateur map permet de créer un nouvel Observable à partir de l'Observable d'origine en transformant simplement chacune de ses valeurs.
   findAll(): Observable<Intern[]> {
-    return this._httpClient.get<Intern[]>('http://localhost:3000/interns') // on récupère interns en vrac
-    .pipe( // on pipe pour ajouter un maillon/une étape
-      map((interns: Intern[]) => { 
+    return this._httpClient.get<Intern[]>('http://localhost:3000/interns').pipe(
+      map((interns: Intern[]) => {
         return interns.sort((i1: Intern, i2: Intern) => {
           return i1.lastname.localeCompare(i2.lastname);
         });
@@ -99,9 +88,6 @@ export class InternService implements IService<Intern> {
     );
   }
 
-  // le getter permet d'avoir accès au tableau interns qui est privé
-  // après les ' : ' indique le type de données attendues
-  // this fait référence à l'instance de cet attribut
   get interns(): Array<Intern> {
     return this._interns;
   }
