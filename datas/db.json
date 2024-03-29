@@ -150,7 +150,6 @@
         "id": "2e40"
       }
     }
-   
   ],
   "poes": [
     {
@@ -187,6 +186,11 @@
       "id": "be49",
       "label": "Apprendre Python",
       "duration": "933"
+    },
+    {
+      "id": "9569",
+      "label": "Bien être en entrpise",
+      "duration": "200"
     }
   ]
 }

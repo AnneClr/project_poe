@@ -34,6 +34,6 @@ export class InternFormComponent {
   onSubmit(): void {
     this._internService
       .add(this.internForm.value)
-      .subscribe((intern: Intern) => this._router.navigate(['/home']));
+      .subscribe((intern: Intern) => this._router.navigate(['/interns']));
   }
 }
