@@ -1,4 +1,4 @@
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 
 /**
  * @interface IService
@@ -13,7 +13,7 @@ export interface IService<T> {
    * returns void
    */
   add(item: T): void;
-  
+
   /**
    * Returns the whole list of T type
    */
