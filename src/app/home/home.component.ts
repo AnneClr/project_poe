@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { InternService } from './services/intern.service';
 import { Intern } from './types/intern.type';
 import { take } from 'rxjs';
+import { PoeService } from '../poe/services/poe.service';
+import { Poe } from '../poe/poe_types/poe_types';
 
 @Component({
   selector: 'app-home',
@@ -15,13 +17,22 @@ export class HomeComponent {
    */
 
   interns: Array<Intern> = [];
+  poes: Array<Poe> = [];
 
-  constructor(private _service: InternService) {}
+  constructor(
+    private _service: InternService,
+    private _poeService: PoeService
+  ) {}
 
   ngOnInit(): void {
     this._service
       .findAll()
       .pipe(take(1))
       .subscribe((interns: Intern[]) => (this.interns = interns));
+      
+    this._poeService
+      .findAll()
+      .pipe(take(1))
+      .subscribe((poes: Poe[]) => (this.poes = poes));
   }
 }

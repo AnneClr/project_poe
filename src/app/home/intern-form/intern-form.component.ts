@@ -35,6 +35,7 @@ export class InternFormComponent {
       ],
       firstname: ['', [Validators.required]],
     });
+    
     this.poeForm = this._formBuilder.group({
       label: ['Sélectionner une POE', [Validators.required]],
     });
