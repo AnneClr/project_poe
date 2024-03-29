@@ -3,83 +3,154 @@
     {
       "lastname": "ARNAUD",
       "firstname": "Manon",
-      "id": "c190"
+      "id": "c190",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "BERNARDIN",
       "firstname": "Bruno",
-      "id": "9771"
+      "id": "9771",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "BERTON",
       "firstname": "Dorine",
-      "id": "0727"
+      "id": "0727",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "BETTAN",
       "firstname": "Frédéric",
-      "id": "2e7f"
+      "id": "2e7f",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "BONNET",
       "firstname": "Fabien",
-      "id": "cbce"
+      "id": "cbce",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "CHENU",
       "firstname": "Guillaume",
-      "id": "d1df"
+      "id": "d1df",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "DE BOUARD",
       "firstname": "Anne-claire",
-      "id": "590b"
+      "id": "590b",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "DUMONET",
       "firstname": "Vincent",
-      "id": "3c20"
+      "id": "3c20",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "EL HACHIMI ALAOUI",
       "firstname": "Imane",
-      "id": "c033"
+      "id": "c033",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "GORMAND",
       "firstname": "Loïc",
-      "id": "8000"
+      "id": "8000",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "PROVO",
       "firstname": "Sabine",
-      "id": "9d78"
+      "id": "9d78",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "ROCK",
       "firstname": "Bertrand",
-      "id": "846f"
+      "id": "846f",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "ROFFIDAL",
       "firstname": "Yann",
-      "id": "685d"
+      "id": "685d",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "TROUCHE",
       "firstname": "Boris",
-      "id": "cdcf"
+      "id": "cdcf",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     },
     {
       "lastname": "TURTI",
       "firstname": "Thomas",
-      "id": "0b4e"
-    },
-    {
-      "id": "508f",
-      "lastname": "test",
-      "firstname": "test"
+      "id": "0b4e",
+      "poe": {
+        "label": "Développeur en cybersécurité",
+        "duration": 457,
+        "id": "2e40"
+      }
     }
+   
   ],
   "poes": [
     {
