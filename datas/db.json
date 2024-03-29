@@ -80,5 +80,23 @@
       "lastname": "test",
       "firstname": "test"
     }
+  ],
+  "poes": [
+    {
+      "label": "Développeur en cybersécurité",
+      "duration": 457
+    },
+    {
+      "label": "Développeur web",
+      "duration": 457
+    },
+    {
+      "label": "Management",
+      "duration": 80
+    },
+    {
+      "label": "Git",
+      "duration": 35
+    }
   ]
 }
