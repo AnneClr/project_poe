@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { InternFormComponent } from './home/intern-form/intern-form.component';
+import { PoeComponent } from './poe/poe/poe.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'interns',
     pathMatch: 'full',
   },
   {
-    path: 'home',
+    path: 'interns',
     component: HomeComponent,
     pathMatch: 'full',
   },
@@ -19,12 +20,7 @@ const routes: Routes = [
     component: InternFormComponent,
     pathMatch: 'full',
   },
-  /**
-   * Route wild card ** : pour s'assurer que si l'URL est modifiée par l'utilisateur,
-   * il soit redirigé vers la page home
-   * Il faut qu'elle soit la dernière des routes
-   * Pour des raisons de sécurité, il faut redirectTo vers une page 404
-   */
+  { path: 'poe', component: PoeComponent, pathMatch: 'full' },
   {
     path: '**',
     redirectTo: 'home',
