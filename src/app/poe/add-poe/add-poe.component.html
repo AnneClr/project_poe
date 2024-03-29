@@ -1,1 +1,29 @@
-<p>add-poe works!</p>
+<form [formGroup]="poeForm" (ngSubmit)="onSubmit()">
+    <legend>Ajouter une POE</legend>
+    <fieldset>
+        <div class="form-field">
+            <input type="text" formControlName="label" placeholder="Intitulé de la POE">
+            <div class="error-messages" *ngIf="poeForm.controls['label'].errors && poeForm.controls['label'].touched">
+                <span *ngIf="poeForm.controls['label'].hasError('minlength')">Le nombre de caractères est
+                    insuffisant</span>
+                <span *ngIf="poeForm.controls['label'].hasError('required')">L'intitulé est obligatoire</span>
+            </div>
+        </div>
+        <div class="form-field">
+            <input type="text" formControlName="duration" placeholder="Durée de la POE">
+            <div class="error-messages"
+                *ngIf="poeForm.controls['duration'].errors && poeForm.controls['duration'].touched">
+                <span *ngIf="poeForm.controls['duration'].hasError('required')">Vous devez saisir une durée
+                </span>
+                <span *ngIf="poeForm.controls['duration'].hasError('pattern')">Durée minimale insuffisante </span>
+            </div>
+        </div>
+    </fieldset>
+
+    <!-- <div class="form-field">
+        <button [disabled]="poeForm.invalid" type="submit">Ajouter</button>
+    </div> -->
+</form>
+
+<!-- on demande l'affichage des données saisies en format json -->
+{{ poeForm.value | json }}
