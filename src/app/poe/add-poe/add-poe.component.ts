@@ -21,7 +21,7 @@ export class AddPoeComponent {
   ngOnInit(): void {
     this.poeForm = this._formBuilder.group({
       label: ['', [Validators.required, Validators.minLength(3)]],
-      duration: ['', [Validators.required, Validators.pattern('^[1-9]d*$')]],
+      duration: ['', [Validators.required, Validators.min(1)]],
     });
   }
 

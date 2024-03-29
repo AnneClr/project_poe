@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Poe } from '../poe_types/poe_types';
 import { PoeService } from '../services/poe.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-poe',
@@ -12,6 +13,9 @@ export class PoeComponent {
   constructor(private _service: PoeService) {}
 
   ngOnInit(): void {
-    this.poes = this._service.poe;
+    this._service
+      .findAll()
+      .pipe(take(1))
+      .subscribe((poes: Poe[]) => (this.poes = poes));
   }
 }

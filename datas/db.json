@@ -84,19 +84,38 @@
   "poes": [
     {
       "label": "Développeur en cybersécurité",
-      "duration": 457
+      "duration": 457,
+      "id": "2e40"
     },
     {
       "label": "Développeur web",
-      "duration": 457
+      "duration": 457,
+      "id": "7989"
     },
     {
       "label": "Management",
-      "duration": 80
+      "duration": 80,
+      "id": "8934"
     },
     {
       "label": "Git",
-      "duration": 35
+      "duration": 35,
+      "id": "5909"
+    },
+    {
+      "id": "e3b9",
+      "label": "Test",
+      "duration": "2"
+    },
+    {
+      "id": "b3de",
+      "label": "test23",
+      "duration": "2366"
+    },
+    {
+      "id": "be49",
+      "label": "Apprendre Python",
+      "duration": "933"
     }
   ]
 }
