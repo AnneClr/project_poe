@@ -1,6 +1,11 @@
 <h2>Liste des POE</h2>
-
-<div *ngFor="let poe of poes">
-    <h4> {{poe.label}} </h4>
-    <p> {{poe.duration}} </p>
+<div class="poe-container">
+    <div *ngFor="let poe of poes" class="poe-card">
+        <h4> {{poe.label}} </h4>
+        <p> {{poe.duration}} </p>
+    </div>
 </div>
+
+<a [routerLink]="['/poe-add']"> 
+    <button  class="btn-add-poe">Ajouter une POE</button> 
+</a>
