@@ -151,14 +151,15 @@
       }
     },
     {
-      "id": "4dbd",
-      "lastname": "",
-      "firstname": ""
-    },
-    {
-      "id": "3bd2",
-      "lastname": "coucou",
-      "firstname": "coucou"
+      "id": "0b67",
+      "lastname": "Potter",
+      "firstname": "Harry",
+      "poe": {
+        "id": "d965",
+        "label": "Améliorer sa communication",
+        "duration": "70"
+      }
+
     }
   ],
   "poes": [
@@ -196,6 +197,16 @@
       "id": "be49",
       "label": "Apprendre Python",
       "duration": "933"
+    },
+    {
+      "id": "9569",
+      "label": "Bien être en entrpise",
+      "duration": "200"
+    },
+    {
+      "id": "d965",
+      "label": "Améliorer sa communication",
+      "duration": "70"
     }
   ]
 }

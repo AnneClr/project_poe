@@ -6,8 +6,8 @@ import { InternService } from '../services/intern.service';
 import { Router } from '@angular/router';
 import { Intern } from '../types/intern.type';
 import { PoeService } from '../../poe/services/poe.service';
-import { Poe } from '../../poe/poe_types/poe_types';
 import { take } from 'rxjs';
+import { Poe } from '../../poe/poe_types/poe_types';
 
 @Component({
   selector: 'app-intern-form',
@@ -16,8 +16,7 @@ import { take } from 'rxjs';
 })
 export class InternFormComponent {
   public internForm: FormGroup = new FormGroup({});
-  public poeForm: FormGroup = new FormGroup({});
-
+  intern: Array<Intern> = [];
   poes: Array<Poe> = [];
 
   constructor(
@@ -27,31 +26,23 @@ export class InternFormComponent {
     private _router: Router
   ) {}
 
-  ngOnInit(): void {
+   ngOnInit(): void {
     this.internForm = this._formBuilder.group({
-      lastname: [
-        '',
-        [Validators.required, Validators.minLength(3)], 
-      ],
+      lastname: ['', [Validators.required, Validators.minLength(3)]],
       firstname: ['', [Validators.required]],
+      poe: ['', Validators.required],
     });
-    
-    this.poeForm = this._formBuilder.group({
-      label: ['Sélectionner une POE', [Validators.required]],
-    });
-    
+
     this._poeService
-    .findAll()
-    .pipe(take(1))
-    .subscribe((poes: Poe[]) => (this.poes = poes));
+      .findAll()
+      .pipe(take(1))
+      .subscribe((poes: Poe[]) => (this.poes = poes));
   }
 
   onSubmit(): void {
     this._internService
       .add(this.internForm.value)
       .subscribe((intern: Intern) => this._router.navigate(['/interns']));
-      console.log(this.internForm.value);
-      
   }
 
 }

@@ -17,20 +17,12 @@
                 Le prénom est obligatoire
             </div>
         </div>
+        <select formControlName="poe">
+            <option disabled selected value="">--Choisir une POE--</option>
+            <option value="poe-choice" *ngFor="let poe of poes" [ngValue]="poe">{{poe.label}}</option>
+        </select>
     </fieldset>
-    <legend>Choisir une POE</legend>
-    <fieldset>
-        <div class="form-field">
-            <select name="poe-choice" id="poe-select">
-                <option value="">Sélectionner une POE</option>
-                <option value="poe-choice" *ngFor="let poe of poes">{{poe.label}}</option>
-            </select>
-            <div class="error-messages"
-                *ngIf="poeForm.controls['label'].hasError('required') && poeForm.controls['label'].touched">
-                Veuillez choisir une POE
-            </div>
-        </div>
-    </fieldset>
+
     <div class="form-field">
         <button [disabled]="internForm.invalid" type="submit">Ajouter</button>
     </div>
