@@ -136,6 +136,7 @@ export class InternService implements IService<Intern> {
 
   add(item: Intern): Observable<Intern> {
     return this._httpClient.post<Intern>('http://localhost:3000/interns', item);
+    console.log(item);
   }
 
   findAll(): Observable<Intern[]> {
@@ -143,6 +144,7 @@ export class InternService implements IService<Intern> {
       map((interns: Intern[]) => {
         return interns.sort((i1: Intern, i2: Intern) => {
           return i1.lastname.localeCompare(i2.lastname);
+          console.log(interns);
         });
       })
     );

@@ -21,9 +21,6 @@
             <option disabled selected value="">--Choisir une POE--</option>
             <option value="poe-choice" *ngFor="let poe of poes" [ngValue]="poe">{{poe.label}}</option>
         </select>
-        <!-- <div *ngIf="poeForm.controls['poeChoiceSelect'].hasError('required') && poeForm.controls['poeChoiceSelect'].touched">
-            Vous devez sélectionner une POE
-        </div> -->
     </fieldset>
 
     <div class="form-field">

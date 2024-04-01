@@ -26,7 +26,7 @@ export class InternFormComponent {
     private _router: Router
   ) {}
 
-  ngOnInit(): void {
+   ngOnInit(): void {
     this.internForm = this._formBuilder.group({
       lastname: ['', [Validators.required, Validators.minLength(3)]],
       firstname: ['', [Validators.required]],
@@ -44,4 +44,5 @@ export class InternFormComponent {
       .add(this.internForm.value)
       .subscribe((intern: Intern) => this._router.navigate(['/interns']));
   }
+
 }
