@@ -2,8 +2,20 @@ $default-color: rgb(4, 27, 126);
 $default-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
   "Lucida Sans", Arial, sans-serif;
 
-h1 {
-  font-family: $default-font;
-  color: $default-color;
-
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  h1 {
+    font-family: $default-font;
+    color: $default-color;
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    &:visited{
+      color: $default-color;
+    }
+  }
 }

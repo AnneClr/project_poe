@@ -159,7 +159,16 @@
         "label": "Améliorer sa communication",
         "duration": "70"
       }
-
+    },
+    {
+      "id": "5eac",
+      "lastname": "Dion",
+      "firstname": "Céline",
+      "poe": {
+        "id": "9569",
+        "label": "Bien être en entrpise",
+        "duration": "200"
+      }
     }
   ],
   "poes": [
